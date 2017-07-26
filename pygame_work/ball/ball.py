@@ -8,7 +8,7 @@ size = width, height = 640, 480
 speedup = [0, -2]
 speeddown = [0, 2]
 speedleft = [-2, 0]
-speedright = [2 ,0]
+speedright = [2, 0]
 black = 0, 0, 0
 
 screen = pygame.display.set_mode(size)
@@ -19,8 +19,7 @@ move_ticker = 0
 
 while 1:
     for event in pygame.event.get():
-        
-        if event.type==QUIT:
+        if event.type == QUIT:
             pygame.quit()
             sys.exit()
 
@@ -34,12 +33,12 @@ while 1:
             if (event.type == K_DOWN) and ballrect.bottom < height:
                 ballrect = ballrect.move(speeddown)
 
-    keys = pygame.key.get_pressed()    
-    if keys[K_LEFT] :
+    keys = pygame.key.get_pressed()
+    if keys[K_LEFT]:
         if move_ticker == 0 and ballrect.left > 0:
             move_ticker = 5
             ballrect = ballrect.move(speedleft)
-    elif keys[K_RIGHT] :
+    elif keys[K_RIGHT]:
         if move_ticker == 0 and ballrect.right < width:
             move_ticker = 5
             ballrect = ballrect.move(speedright)
